@@ -1,9 +1,6 @@
 import { useState, FC, SVGProps } from "react";
-// import { ChevronLeftIcon, ChevronRightIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-// import { Menu, Transition } from "@headlessui/react";
-// import { DotsVerticalIcon } from "@heroicons/react/24/outline";
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import {
   parseISO,
   parse,
@@ -25,7 +22,6 @@ import PropTypes from "prop-types";
 interface MeetingType {
   id: number;
   name: string;
-  imageUrl: React.FC<React.SVGProps<SVGSVGElement>>;
   start: string;
   end: string;
 }
@@ -34,14 +30,12 @@ const meetings: MeetingType[] = [
   {
     id: 1,
     name: "Alcoholic Annonymous",
-    imageUrl: faUserCircle,
     start: "2024-09-23T13:00",
     end: "2024-09-23T14:30",
   },
   {
     id: 2,
     name: "Narcotics Annonymous",
-    imageUrl: faUserCircle,
     start: "2024-09-23T14:30",
     end: "2024-09-23T16:30",
   },
@@ -209,7 +203,6 @@ interface MeetingProps {
     name: string;
     start: string;
     end: string;
-    imageUrl: React.FC<React.SVGProps<SVGSVGElement>>;
   };
 }
 
@@ -221,13 +214,7 @@ const Meeting: React.FC<MeetingProps> = ({ meeting }) => {
       key={meeting.id}
       className="flex items-center px-4 py-2 space-x-4 group 
                   rounded-xl focus-within:bg-gray-100 hover:bg-gray-100"
-    >
-      <img
-        src={String(meeting.imageUrl)}
-        alt="Icon"
-        className="flex-none w-10 h-10 rounded-full"
-      />
-      
+    >      
       <div className="flex-auto">
         <p className="text-gray-900">{meeting.name}</p>
         <p className="mt-0.5">
