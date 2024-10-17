@@ -10,7 +10,7 @@ import {
 
 const Menu = () => {
   return (
-    <div className="flex flex-col items-center space-y-0 w-full bg-gray-700">
+    <div className="flex flex-col min-h-screen items-center space-y-0 w-full bg-gray-700">
       <img src={ContactInfo} alt="Contact Information" className="w-full" />
       <button
         className="w-full px-4 py-2 bg-gray-700
@@ -37,17 +37,8 @@ const Menu = () => {
          hover:text-yellow-400
           focus:ring-blue-400 focus:ring-opacity-75"
       >
-        Calendar
-      </button>
-      <button
-        className="w-full px-4 py-2 bg-gray-700
-        text-white font-semibold shadow-md 
-         hover:bg-blue-900 focus:outline-none focus:ring-2
-         hover:text-yellow-400
-          focus:ring-blue-400 focus:ring-opacity-75"
-      >
         Board
-      </button>
+      </button>      
       <button
         className="w-full px-4 py-2 bg-gray-700
        text-white font-semibold shadow-md 
@@ -57,7 +48,10 @@ const Menu = () => {
       >
         Locations
       </button>
-      
+      <br />
+      <br />
+      <br />
+      <br />
         <label
           htmlFor="phone"
           className="w-full  px-4 py-2 bg-gray-900 text-white font-semibold shadow-md flex items-center justify-center"
